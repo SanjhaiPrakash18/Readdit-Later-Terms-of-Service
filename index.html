@@ -1,254 +1,738 @@
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Sparkles } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readdit Later - Terms of Service</title>
+    <link rel="icon" type="image/png" href="icons/icon48.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-const premiumFeatures = [
-  "Everything in Free, plus:",
-  "Unlimited saved posts—no caps, ever",
-  "Unlimited AI summaries",
-  "Unlimited AI labeling",
-  "Unlimited sentiment analysis",
-  "AI-powered semantic search",
-  "AI content repurposing",
-  "Unlimited export to Notion, CSV, JSON, Markdown",
-  "Bulk actions for mass management"
-];
+        body {
+            font-family: 'Rethink Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            background-image: radial-gradient(circle, #e9ecef 1px, rgba(0, 0, 0, 0) 2px);
+            background-size: 20px 20px;
+        }
 
-const freeFeatures = [
-  "Up to 50 saved posts",
-  "AI summaries (50 posts limit)",
-  "AI labeling (50 posts limit)",
-  "Sentiment analysis (50 posts limit)",
-  "Export up to 50 posts (Notion, CSV, JSON, Markdown)",
-  "Manual labels & personal notes",
-  "Auto-group by subreddit",
-  "Basic search & filters"
-];
+        .header {
+            background: linear-gradient(135deg, #ff4500, #ff6b35);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+        }
 
-const exportOnlyFeatures = [
-  "Everything in Free, plus:",
-  "Unlimited export—take your data anywhere",
-  "Export to Notion with one click",
-  "Download as CSV, JSON, or Markdown"
-];
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-const Pricing = () => {
-  return (
-    <section id="pricing" className="py-20 lg:py-32 relative overflow-hidden bg-muted/30">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 dotted-grid opacity-30" />
-      
-      <div className="container relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Start Free,{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Upgrade Anytime
-            </span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Try it risk-free. No credit card required. Upgrade only when you're ready for more.
-          </p>
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .terms-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        h2 {
+            color: #ff4500;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 5px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .important {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+
+        .info {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0079d3;
+            margin: 20px 0;
+        }
+
+        .premium-notice {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background-color: #d1ecf1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0079d3;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: #0c5460;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        a {
+            color: #0079d3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: #e03d00;
+            color: white;
+            text-decoration: none;
+        }
+
+        .effective-date {
+            color: #6c757d;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .terms-content {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Readdit Later</h1>
+    <p style="text-align: center;">Terms of Service</p>
+</div>
+
+<div class="container">
+    <div class="terms-content">
+        <div class="effective-date">
+            <strong>Effective Date:</strong> January 14, 2026<br>
+            <strong>Last Updated:</strong> January 14, 2026
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto items-stretch">
-          {/* Free Plan */}
-          <div className="relative group h-full">
-            <div className="absolute inset-0 bg-gradient-to-b from-border/50 to-border/30 rounded-2xl" />
-            <div className="relative bg-card rounded-2xl p-6 m-[1px] h-[calc(100%-2px)] flex flex-col">
-              {/* Header */}
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-foreground mb-1">Free</h3>
-                <p className="text-sm text-muted-foreground mb-6">Perfect to get started</p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-5xl font-bold text-foreground">$0</span>
-                  <span className="text-muted-foreground ml-2">/forever</span>
-                </div>
-                <div className="h-6 mt-3" />
-              </div>
-              
-              {/* Features */}
-              <div className="flex-1">
-                <ul className="space-y-3">
-                  {freeFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 min-h-[24px]">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* CTA */}
-              <div className="mt-6">
-                <Button 
-                  className="w-full h-12 font-medium text-base gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
-                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-                >
-                  <img
-                    src="/Chrome SVG.svg"
-                    alt="Chrome"
-                    className="h-5 w-5 mr-2 brightness-0 invert"
-                  />
-                  Start Free
-                </Button>
-                <p className="text-xs text-center text-muted-foreground mt-3 h-4">No credit card required</p>
-              </div>
-            </div>
-          </div>
+        <h2>Agreement to Terms</h2>
+        <p>
+            Welcome to Readdit Later, a Chrome extension designed to help you save, organize, and enhance your Reddit experience. 
+            These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") 
+            and the developers of Readdit Later ("we," "us," or "our") regarding your use of the extension and its services.
+        </p>
 
-          {/* Monthly Plan */}
-          <div className="relative group h-full">
-            <div className="absolute inset-0 bg-gradient-to-b from-border/50 to-border/30 rounded-2xl" />
-            <div className="relative bg-card rounded-2xl p-6 m-[1px] h-[calc(100%-2px)] flex flex-col">
-              {/* Header */}
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-foreground mb-1">Monthly</h3>
-                <p className="text-sm text-muted-foreground mb-6">Pay as you go</p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-5xl font-bold text-foreground">$3.99</span>
-                  <span className="text-muted-foreground ml-2">/month</span>
-                </div>
-                <div className="h-6 mt-3" />
-              </div>
-              
-              {/* Features */}
-              <div className="flex-1">
-                <ul className="space-y-3">
-                  {premiumFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 min-h-[24px]">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* CTA */}
-              <div className="mt-6">
-                <Button 
-                  className="w-full h-12 font-medium text-base gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
-                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-                >
-                  <img
-                    src="/Chrome SVG.svg"
-                    alt="Chrome"
-                    className="h-5 w-5 mr-2 brightness-0 invert"
-                  />
-                  Start Monthly
-                </Button>
-                <p className="text-xs text-center text-muted-foreground mt-3 h-4">
-                  Cancel anytime, no questions asked
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Yearly Plan - Featured */}
-          <div className="relative group h-full">
-            {/* Gradient border for featured card */}
-            <div className="absolute inset-0 gradient-primary rounded-2xl" />
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-              <Badge className="gradient-primary text-primary-foreground border-0 px-4 py-1 font-semibold shadow-lg">
-                MOST POPULAR
-              </Badge>
-            </div>
-            <div className="relative bg-card rounded-2xl p-6 m-[2px] h-[calc(100%-4px)] flex flex-col">
-              {/* Header */}
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-foreground mb-1">Yearly</h3>
-                <p className="text-sm text-muted-foreground mb-6">Best value—save 39%</p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-5xl font-bold gradient-primary bg-clip-text text-transparent">$29</span>
-                  <span className="text-muted-foreground ml-2">/year</span>
-                </div>
-                <Badge variant="secondary" className="mt-3 bg-primary/10 text-primary border-0 font-medium">
-                  Save $18.88 vs monthly
-                </Badge>
-              </div>
-              
-              {/* Features */}
-              <div className="flex-1">
-                <ul className="space-y-3">
-                  {premiumFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 min-h-[24px]">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* CTA */}
-              <div className="mt-6">
-                <Button 
-                  className="w-full h-12 font-medium text-base gradient-primary text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
-                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-                >
-                  <img
-                    src="/Chrome SVG.svg"
-                    alt="Chrome"
-                    className="h-5 w-5 mr-2 brightness-0 invert"
-                  />
-                  Start Yearly
-                </Button>
-                <p className="text-xs text-center text-muted-foreground mt-3 h-4">
-                  Cancel anytime, no questions asked
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Export Only Plan */}
-          <div className="relative group h-full">
-            <div className="absolute inset-0 bg-gradient-to-b from-border/50 to-border/30 rounded-2xl" />
-            <div className="relative bg-card rounded-2xl p-6 m-[1px] h-[calc(100%-2px)] flex flex-col">
-              {/* Header */}
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-foreground mb-1">Export Only</h3>
-                <p className="text-sm text-muted-foreground mb-6">Unlimited exports, forever</p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-5xl font-bold text-foreground">$20</span>
-                  <span className="text-muted-foreground ml-2">/lifetime</span>
-                </div>
-                <div className="h-6 mt-3" />
-              </div>
-              
-              {/* Features */}
-              <div className="flex-1">
-                <ul className="space-y-3">
-                  {exportOnlyFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 min-h-[24px]">
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* CTA */}
-              <div className="mt-6">
-                <Button 
-                  className="w-full h-12 font-medium text-base gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
-                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-                >
-                  <img
-                    src="/Chrome SVG.svg"
-                    alt="Chrome"
-                    className="h-5 w-5 mr-2 brightness-0 invert"
-                  />
-                  Buy Export Only
-                </Button>
-                <p className="text-xs text-center text-muted-foreground mt-3 h-4">
-                  One-time payment
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="important">
+            <strong>Important:</strong> By installing, accessing, or using Readdit Later, you acknowledge that you have read, 
+            understood, and agree to be bound by these Terms. If you do not agree to these Terms, please do not use our extension.
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default Pricing;
+        <h2>Description of Service</h2>
+
+        <h3>Core Functionality</h3>
+        <p>Readdit Later is a Chrome browser extension that provides:</p>
+        <ul>
+            <li><strong>Reddit Integration:</strong> Connects to your Reddit account via secure OAuth 2.0 authentication</li>
+            <li><strong>Post Management:</strong> Retrieves, displays, and organizes your saved Reddit posts</li>
+            <li><strong>Search & Filtering:</strong> Advanced search, filtering, and sorting capabilities</li>
+            <li><strong>Labels & Notes:</strong> Custom labeling and note-taking for saved posts</li>
+            <li><strong>Read Status Tracking:</strong> Mark posts as read/unread for better organization</li>
+        </ul>
+
+        <h3>Premium Features (Subscription Required)</h3>
+        <div class="premium-notice">
+            <strong>🔒 Premium Subscription:</strong> Advanced features require an active paid subscription. 
+            A free trial period may be available for first-time users.
+        </div>
+
+        <p>Premium features include:</p>
+        <ul>
+            <li><strong>AI-Powered Summaries:</strong> Automatic post summarization using GPT-4o-mini</li>
+            <li><strong>Sentiment Analysis:</strong> Emotion and tone detection for posts</li>
+            <li><strong>Auto-Labeling:</strong> AI-powered automatic categorization of posts</li>
+            <li><strong>Natural Language Search:</strong> Semantic search using AI embeddings</li>
+            <li><strong>Subreddit Analysis:</strong> Community insights and analytics</li>
+            <li><strong>Cross-Device Sync:</strong> Access your labels, notes, and read status across devices</li>
+            <li><strong>Notion Integration:</strong> Export your saved posts to Notion databases</li>
+            <li><strong>Bulk Operations:</strong> Perform actions on multiple posts simultaneously</li>
+        </ul>
+
+        <h3>Service Components</h3>
+        <p>The service consists of:</p>
+        <ul>
+            <li><strong>Browser Extension:</strong> Client-side interface running in your Chrome browser</li>
+            <li><strong>Server Infrastructure:</strong> Secure Supabase database for data synchronization</li>
+            <li><strong>AI Processing:</strong> OpenRouter/OpenAI API for AI-powered features</li>
+            <li><strong>Payment Processing:</strong> Dodo Payments for subscription management</li>
+        </ul>
+
+        <h3>Service Limitations</h3>
+        <ul>
+            <li>Requires a valid Reddit account and active internet connection</li>
+            <li>Functionality depends on Reddit's API availability and rate limits</li>
+            <li>AI features subject to third-party AI service availability</li>
+            <li>Cross-device sync requires premium subscription</li>
+            <li>Some features may require specific Chrome browser versions (Manifest V3)</li>
+        </ul>
+
+        <h2>Subscription and Payment Terms</h2>
+
+        <h3>Subscription Plans</h3>
+        <ul>
+            <li><strong>Free Trial:</strong> One-time trial period for new users (if available)</li>
+            <li><strong>Premium Monthly:</strong> Monthly subscription with automatic renewal</li>
+            <li><strong>Premium Yearly:</strong> Annual subscription with automatic renewal</li>
+        </ul>
+
+        <h3>Payment Terms</h3>
+        <ul>
+            <li>All payments are processed through Dodo Payments, our third-party payment processor</li>
+            <li>Subscription fees are billed in advance on a recurring basis</li>
+            <li>Prices are displayed in your local currency at the time of purchase</li>
+            <li>All fees are non-refundable except as required by applicable law</li>
+            <li>We do not store or have access to your credit card information</li>
+        </ul>
+
+        <h3>Free Trial Terms</h3>
+        <ul>
+            <li>Free trial is limited to one per user (tracked by Reddit username)</li>
+            <li>Trial period duration will be clearly stated at the time of activation</li>
+            <li>After trial expiration, premium features will be disabled unless you subscribe</li>
+            <li>You may cancel during the trial period without being charged</li>
+        </ul>
+
+        <h3>Automatic Renewal</h3>
+        <ul>
+            <li>Subscriptions automatically renew at the end of each billing period</li>
+            <li>You will be charged the then-current subscription price</li>
+            <li>You can cancel automatic renewal at any time through your account settings</li>
+            <li>Cancellation takes effect at the end of the current billing period</li>
+        </ul>
+
+        <h3>Cancellation and Refunds</h3>
+        <ul>
+            <li>You may cancel your subscription at any time</li>
+            <li>Cancellation prevents future charges but does not provide refunds for the current period</li>
+            <li>You will retain access to premium features until the end of your paid period</li>
+            <li>Refunds are generally not provided except as required by applicable consumer protection laws</li>
+        </ul>
+
+        <h3>Price Changes</h3>
+        <ul>
+            <li>We reserve the right to modify subscription prices</li>
+            <li>Price changes will be communicated at least 30 days in advance</li>
+            <li>Continued subscription after price change constitutes acceptance</li>
+            <li>You may cancel if you do not agree to the new pricing</li>
+        </ul>
+
+        <h2>User Eligibility and Account Requirements</h2>
+
+        <h3>Age Requirements</h3>
+        <ul>
+            <li>You must be at least 13 years old to use this extension</li>
+            <li>You must meet Reddit's minimum age requirements for your jurisdiction</li>
+            <li>Users under 18 should have parental consent before using the extension</li>
+            <li>For paid subscriptions, you must be of legal age to enter into contracts in your jurisdiction</li>
+        </ul>
+
+        <h3>Reddit Account Requirements</h3>
+        <ul>
+            <li>You must have a valid, active Reddit account</li>
+            <li>Your Reddit account must be in good standing (not suspended or banned)</li>
+            <li>You are responsible for maintaining the security of your Reddit credentials</li>
+            <li>You must comply with Reddit's Terms of Service and User Agreement</li>
+        </ul>
+
+        <h3>Account Responsibility</h3>
+        <ul>
+            <li>You are responsible for all activity under your account</li>
+            <li>You must provide accurate and complete information for billing</li>
+            <li>You must notify us of any unauthorized use of your account</li>
+            <li>One account per Reddit username - no sharing or transferring subscriptions</li>
+        </ul>
+
+        <h2>Acceptable Use Policy</h2>
+
+        <h3>Permitted Uses</h3>
+        <p>You may use Readdit Later for:</p>
+        <ul>
+            <li>Personal organization and management of your saved Reddit content</li>
+            <li>Legitimate research and educational purposes</li>
+            <li>Creating personal backups of your publicly saved posts</li>
+            <li>Analyzing your own Reddit activity patterns</li>
+            <li>Exporting your data to third-party services (e.g., Notion) for personal use</li>
+        </ul>
+
+        <h3>Prohibited Uses</h3>
+        <p>You may NOT use Readdit Later to:</p>
+        <ul>
+            <li>Violate any applicable laws, regulations, or third-party rights</li>
+            <li>Access or attempt to access other users' accounts or data</li>
+            <li>Reverse engineer, decompile, or disassemble the extension</li>
+            <li>Circumvent Reddit's rate limits or API restrictions</li>
+            <li>Create automated systems to abuse Reddit's services</li>
+            <li>Share, resell, or redistribute your subscription access</li>
+            <li>Distribute, sell, or commercialize the extension without permission</li>
+            <li>Use the extension for any harmful, illegal, or malicious purposes</li>
+            <li>Attempt to interfere with the extension's operation or security</li>
+            <li>Use AI features to generate harmful, misleading, or illegal content</li>
+            <li>Abuse free trial by creating multiple accounts</li>
+            <li>Perform fraudulent payment transactions or chargebacks</li>
+        </ul>
+
+        <h2>Privacy and Data Handling</h2>
+
+        <div class="info">
+            <strong>Privacy First:</strong> Your privacy is paramount to us. Please review our comprehensive 
+            <a href="privacy-policy.html">Privacy Policy</a> for detailed information about how we handle your data.
+        </div>
+
+        <h3>Key Privacy Points</h3>
+        <ul>
+            <li><strong>Local Storage:</strong> Reddit OAuth tokens and cached posts stored locally in your browser</li>
+            <li><strong>Server Storage:</strong> Labels, notes, and read status synced to our Supabase servers for cross-device access</li>
+            <li><strong>AI Processing:</strong> Post content sent to OpenRouter/OpenAI for AI features (not permanently stored)</li>
+            <li><strong>Data Control:</strong> You can export or delete all your data at any time</li>
+            <li><strong>No Data Sales:</strong> We never sell your personal data to third parties</li>
+        </ul>
+
+        <h3>Third-Party Services</h3>
+        <p>We use the following third-party services:</p>
+        <ul>
+            <li><strong>Reddit API:</strong> For authentication and retrieving your saved posts</li>
+            <li><strong>Supabase:</strong> For secure database storage and cross-device sync</li>
+            <li><strong>OpenRouter/OpenAI:</strong> For AI-powered features</li>
+            <li><strong>Dodo Payments:</strong> For payment processing</li>
+            <li><strong>Notion API:</strong> For optional Notion integration (if you enable it)</li>
+        </ul>
+
+        <p>Each service has its own privacy policy governing how they handle data.</p>
+
+        <h2>Intellectual Property Rights</h2>
+
+        <h3>Extension Ownership</h3>
+        <ul>
+            <li>Readdit Later and all associated intellectual property belong to its developers</li>
+            <li>These Terms grant you a limited, non-exclusive, non-transferable license to use the extension</li>
+            <li>You may not copy, modify, distribute, or create derivative works</li>
+            <li>All trademarks and service marks remain the property of their respective owners</li>
+        </ul>
+
+        <h3>Your Content</h3>
+        <ul>
+            <li>You retain all rights to your Reddit posts and content</li>
+            <li>Labels and notes you create remain your intellectual property</li>
+            <li>We only access content you have explicitly saved on Reddit</li>
+            <li>We do not claim any ownership over your personal data or content</li>
+            <li>You grant us a license to store and process your data to provide the service</li>
+        </ul>
+
+        <h3>Third-Party Content</h3>
+        <ul>
+            <li>Reddit content is subject to Reddit's terms and individual creators' rights</li>
+            <li>Respect copyright and intellectual property rights of all content creators</li>
+            <li>The extension is not affiliated with or endorsed by Reddit, Inc., OpenAI, Notion, or Supabase</li>
+            <li>AI-generated summaries are provided for personal use only</li>
+        </ul>
+
+        <h2>AI Features and Content</h2>
+
+        <h3>AI Feature Terms</h3>
+        <ul>
+            <li>AI features use OpenAI's GPT-4o-mini model via OpenRouter API</li>
+            <li>AI-generated content (summaries, labels) may not always be accurate</li>
+            <li>You are responsible for verifying AI-generated content before relying on it</li>
+            <li>AI features are subject to rate limits and availability of third-party services</li>
+            <li>We do not guarantee accuracy, completeness, or reliability of AI outputs</li>
+        </ul>
+
+        <h3>Acceptable Use of AI Features</h3>
+        <ul>
+            <li>AI features are for personal, non-commercial use only</li>
+            <li>Do not use AI features to generate harmful, illegal, or misleading content</li>
+            <li>Respect intellectual property rights when using AI summaries</li>
+            <li>AI-generated content should not be republished without proper attribution</li>
+        </ul>
+
+        <h2>Service Availability and Modifications</h2>
+
+        <h3>Service Availability</h3>
+        <ul>
+            <li>We strive to maintain 99% service availability for paid subscribers</li>
+            <li>Service may be interrupted due to maintenance, updates, or technical issues</li>
+            <li>Reddit API changes may affect extension functionality</li>
+            <li>Third-party service outages (OpenAI, Supabase) may impact features</li>
+            <li>We do not guarantee 100% uptime or continuous availability</li>
+            <li>Scheduled maintenance will be announced when possible</li>
+        </ul>
+
+        <h3>Modifications to Service</h3>
+        <ul>
+            <li>We may modify, update, add, or discontinue features at any time</li>
+            <li>Major changes will be communicated through extension updates or email</li>
+            <li>We reserve the right to modify these Terms with 30 days notice</li>
+            <li>Continued use after modifications constitutes acceptance of changes</li>
+            <li>Price changes for subscriptions will be communicated in advance</li>
+        </ul>
+
+        <h2>User Responsibilities</h2>
+
+        <h3>Account Security</h3>
+        <ul>
+            <li>Keep your Reddit account credentials secure and confidential</li>
+            <li>Use strong, unique passwords for your accounts</li>
+            <li>Notify us immediately of any suspected unauthorized access</li>
+            <li>Regularly review authorized applications in your Reddit settings</li>
+            <li>Do not share your subscription access with others</li>
+        </ul>
+
+        <h3>Compliance</h3>
+        <ul>
+            <li>Comply with all applicable laws and regulations in your jurisdiction</li>
+            <li>Respect Reddit's Terms of Service and community guidelines</li>
+            <li>Report any bugs, security issues, or violations to us promptly</li>
+            <li>Use the extension responsibly and ethically</li>
+            <li>Honor intellectual property rights of content creators</li>
+        </ul>
+
+        <h3>Data Backup</h3>
+        <ul>
+            <li>While we maintain backups, you are responsible for maintaining your own backups</li>
+            <li>Use the data export feature to create regular backups of your data</li>
+            <li>We are not responsible for data loss due to user actions or technical failures</li>
+        </ul>
+
+        <h2>Disclaimers and Limitations of Liability</h2>
+
+        <h3>Service Disclaimers</h3>
+        <div class="important">
+            <strong>AS-IS BASIS:</strong> The extension is provided "as is" and "as available" without any warranties 
+            of any kind, either express or implied, including but not limited to warranties of merchantability, 
+            fitness for a particular purpose, or non-infringement.
+        </div>
+
+        <p>We specifically disclaim any warranties regarding:</p>
+        <ul>
+            <li>Continuous or error-free operation of the extension</li>
+            <li>Accuracy or completeness of data retrieved from Reddit or AI services</li>
+            <li>Accuracy of AI-generated summaries, labels, or analysis</li>
+            <li>Compatibility with all browser versions or configurations</li>
+            <li>Prevention of data loss or corruption</li>
+            <li>Availability of third-party services (Reddit, OpenAI, Supabase)</li>
+            <li>Results obtained from using the extension</li>
+        </ul>
+
+        <h3>Limitation of Liability</h3>
+        <p>
+            To the maximum extent permitted by applicable law, in no event shall we be liable for any indirect, incidental, 
+            special, consequential, or punitive damages, including but not limited to:
+        </p>
+        <ul>
+            <li>Loss of data, profits, revenue, or business opportunities</li>
+            <li>Service interruptions or technical failures</li>
+            <li>Damages arising from third-party services (Reddit, OpenAI, Supabase, Dodo Payments)</li>
+            <li>Inaccurate AI-generated content or analysis</li>
+            <li>Unauthorized access to your account or data</li>
+            <li>Any damages exceeding the amount you paid for the subscription in the 12 months preceding the claim</li>
+        </ul>
+
+        <p>
+            Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities, 
+            so some of the above limitations may not apply to you.
+        </p>
+
+        <h2>Indemnification</h2>
+
+        <p>
+            You agree to indemnify, defend, and hold harmless the developers of Readdit Later, its affiliates, officers, 
+            directors, employees, and agents from and against any claims, damages, losses, costs, or expenses 
+            (including reasonable attorneys' fees) arising from:
+        </p>
+        <ul>
+            <li>Your use or misuse of the extension or its features</li>
+            <li>Your violation of these Terms or applicable laws</li>
+            <li>Your violation of any third-party rights (including intellectual property rights)</li>
+            <li>Any content you access, create, or manage through the extension</li>
+            <li>Your use of AI features or AI-generated content</li>
+            <li>Fraudulent payment activities or chargebacks</li>
+            <li>Your breach of Reddit's Terms of Service</li>
+        </ul>
+
+        <h2>Termination</h2>
+
+        <h3>Termination by You</h3>
+        <ul>
+            <li>You may cancel your subscription at any time through your account settings</li>
+            <li>You may stop using the extension at any time by uninstalling it</li>
+            <li>Request data deletion through Settings → Privacy & Data or by email</li>
+            <li>Revoke access permissions through Reddit's authorized applications page</li>
+            <li>Cancellation does not entitle you to a refund for the current billing period</li>
+        </ul>
+
+        <h3>Termination by Us</h3>
+        <p>We may terminate or suspend your access immediately, without notice, for:</p>
+        <ul>
+            <li>Violations of these Terms or applicable laws</li>
+            <li>Fraudulent payment activities or chargebacks</li>
+            <li>Abuse of free trial or subscription sharing</li>
+            <li>Harmful or malicious use of the extension</li>
+            <li>Non-payment of subscription fees</li>
+            <li>Discontinuation of the service (with reasonable notice)</li>
+        </ul>
+
+        <h3>Effect of Termination</h3>
+        <ul>
+            <li>Your license to use the extension terminates immediately</li>
+            <li>You should uninstall the extension from your browser</li>
+            <li>Access to premium features will be immediately revoked</li>
+            <li>Server-stored data (labels, notes, read status) will be retained for 30 days</li>
+            <li>You may request data export within 30 days of termination</li>
+            <li>After 30 days, server data may be permanently deleted</li>
+            <li>Locally stored data remains on your device unless manually deleted</li>
+            <li>Provisions regarding liability, indemnification, and disputes survive termination</li>
+        </ul>
+
+        <h2>Dispute Resolution</h2>
+
+        <h3>Informal Resolution</h3>
+        <p>
+            Before initiating formal proceedings, please contact us at sanjhaiprakash18@gmail.com to discuss 
+            and potentially resolve any disputes informally. Most issues can be resolved through direct communication. 
+            We commit to responding within 72 hours and working in good faith to resolve your concerns.
+        </p>
+
+        <h3>Governing Law</h3>
+        <p>
+            These Terms shall be governed by and construed in accordance with the applicable laws, without regard 
+            to conflict of law principles. You agree that any legal action or proceeding shall be brought in the 
+            courts of competent jurisdiction.
+        </p>
+
+        <h3>Arbitration</h3>
+        <p>
+            Any disputes that cannot be resolved informally may be subject to binding arbitration in accordance 
+            with applicable arbitration rules, except where prohibited by law or where small claims court jurisdiction applies.
+        </p>
+
+        <h3>Class Action Waiver</h3>
+        <p>
+            You agree to resolve disputes with us on an individual basis and waive the right to participate in 
+            class actions, class arbitrations, or representative actions, to the extent permitted by applicable law.
+        </p>
+
+        <h2>General Provisions</h2>
+
+        <h3>Entire Agreement</h3>
+        <p>
+            These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding 
+            the extension and supersede all prior agreements, understandings, and communications.
+        </p>
+
+        <h3>Severability</h3>
+        <p>
+            If any provision of these Terms is found to be unenforceable or invalid, the remaining provisions shall 
+            remain in full force and effect, and the unenforceable provision shall be replaced with an enforceable 
+            provision that most closely reflects the original intent.
+        </p>
+
+        <h3>No Waiver</h3>
+        <p>
+            Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right 
+            or provision. Any waiver must be in writing and signed by an authorized representative.
+        </p>
+
+        <h3>Assignment</h3>
+        <p>
+            You may not assign or transfer your rights under these Terms without our prior written consent. 
+            We may assign our rights and obligations under these Terms without restriction, including in connection 
+            with a merger, acquisition, or sale of assets.
+        </p>
+
+        <h3>Force Majeure</h3>
+        <p>
+            We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable 
+            control, including but not limited to acts of God, natural disasters, war, terrorism, pandemics, 
+            internet service provider failures, or third-party service outages.
+        </p>
+
+        <h2>Updates to These Terms</h2>
+
+        <p>
+            We may update these Terms of Service periodically to reflect changes in our practices, applicable law, 
+            service features, or pricing. When we make changes:
+        </p>
+        <ul>
+            <li>We will update the "Last Updated" date at the top of this document</li>
+            <li>Significant changes will be communicated through the extension, email, or our website</li>
+            <li>Material changes (especially to subscription terms) will be communicated at least 30 days in advance</li>
+            <li>Continued use of the extension after changes constitutes acceptance of the updated Terms</li>
+            <li>If you do not agree to the updated Terms, you should cancel your subscription and stop using the extension</li>
+        </ul>
+
+        <h2>Contact and Support</h2>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+                For questions, concerns, technical support, or disputes regarding these Terms of Service:
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:sanjhaiprakash18@gmail.com">sanjhaiprakash18@gmail.com</a><br>
+                <strong>Subject:</strong> Readdit Later Terms Inquiry<br>
+                <strong>Response Time:</strong> Within 72 hours for support inquiries
+            </p>
+            <p>
+                <strong>For Billing Issues:</strong> Include your Reddit username and subscription details<br>
+                <strong>For Technical Issues:</strong> Include browser version and error details<br>
+                <strong>For Legal Inquiries:</strong> Mark email as "Legal - Terms of Service"
+            </p>
+        </div>
+
+        <h2>Acknowledgment and Acceptance</h2>
+
+        <p>
+            By using Readdit Later, you acknowledge that you have read, understood, and agree to be bound by these 
+            Terms of Service and our Privacy Policy. You represent that:
+        </p>
+        <ul>
+            <li>You meet all age and eligibility requirements</li>
+            <li>You have the legal capacity to enter into this agreement</li>
+            <li>All information you provide is accurate and complete</li>
+            <li>You will comply with all applicable laws and these Terms</li>
+            <li>You understand that premium features require a paid subscription</li>
+            <li>You understand how your data is collected, stored, and used</li>
+            <li>You have reviewed and understand the refund and cancellation policies</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Remember:</strong> You can revoke the extension's access to your Reddit account at any time through 
+            <a href="https://www.reddit.com/prefs/apps/" target="_blank">Reddit's authorized applications page</a>. 
+            You can also delete all your server-stored data through Settings → Privacy & Data.
+        </div>
+
+        <div class="important">
+            <strong>Legal Notice:</strong> These Terms constitute a legally binding agreement. If you do not understand 
+            any provision, please seek legal advice before using the extension or purchasing a subscription.
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; color: #6c757d;">
+            Thank you for using Readdit Later!
+        </p>
+    </div>
+</div>
+
+<div class="footer">
+    <p style="text-align: center;">
+        © 2026 Readdit Later. This extension is not affiliated with Reddit, Inc.<br>
+        Reddit is a trademark of Reddit, Inc. | OpenAI, Notion, Supabase, and Dodo Payments are trademarks of their respective owners.
+    </p>
+</div>
+</body>
+</html>

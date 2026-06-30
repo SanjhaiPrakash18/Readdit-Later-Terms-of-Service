@@ -43,6 +43,14 @@
             opacity: 0.9;
         }
 
+        .disclaimer {
+            font-size: 12px;
+            margin-top: 15px;
+            opacity: 0.8;
+            font-style: italic;
+            text-align: center;
+        }
+
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -213,18 +221,19 @@
 <div class="header">
     <h1>Readdit Later</h1>
     <p style="text-align: center;">Terms of Service</p>
+    <p class="disclaimer">Independent third-party tool. Not affiliated with or endorsed by Reddit Inc.</p>
 </div>
 
 <div class="container">
     <div class="terms-content">
         <div class="effective-date">
             <strong>Effective Date:</strong> January 14, 2026<br>
-            <strong>Last Updated:</strong> January 14, 2026
+            <strong>Last Updated:</strong> June 30, 2026
         </div>
 
         <h2>Agreement to Terms</h2>
         <p>
-            Welcome to Readdit Later, a Chrome extension designed to help you save, organize, and enhance your Reddit experience. 
+            Welcome to Readdit Later, a Chrome extension designed to help you save, organize, and enhance your Reddit experience with saved posts and comments.
             These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") 
             and the developers of Readdit Later ("we," "us," or "our") regarding your use of the extension and its services.
         </p>
@@ -240,15 +249,15 @@
         <p>Readdit Later is a Chrome browser extension that provides:</p>
         <ul>
             <li><strong>Reddit Integration:</strong> Connects to your Reddit account via secure OAuth 2.0 authentication</li>
-            <li><strong>Post Management:</strong> Retrieves, displays, and organizes your saved Reddit posts</li>
+            <li><strong>Post & Comment Management:</strong> Retrieves, displays, and organizes your saved Reddit posts and comments</li>
             <li><strong>Search & Filtering:</strong> Advanced search, filtering, and sorting capabilities</li>
-            <li><strong>Labels & Notes:</strong> Custom labeling and note-taking for saved posts</li>
-            <li><strong>Read Status Tracking:</strong> Mark posts as read/unread for better organization</li>
+            <li><strong>Labels & Notes:</strong> Custom labeling and note-taking for saved posts and comments</li>
+            <li><strong>Read Status Tracking:</strong> Mark posts and comments as read/unread for better organization</li>
         </ul>
 
         <h3>Premium Features (Subscription Required)</h3>
         <div class="premium-notice">
-            <strong>🔒 Premium Subscription:</strong> Advanced features require an active paid subscription. 
+            <strong>Premium Subscription:</strong> Advanced features require an active paid subscription. 
             A free trial period may be available for first-time users.
         </div>
 
@@ -256,9 +265,11 @@
         <ul>
             <li><strong>AI-Powered Summaries:</strong> Automatic post summarization using GPT-4o-mini</li>
             <li><strong>Sentiment Analysis:</strong> Emotion and tone detection for posts</li>
-            <li><strong>Auto-Labeling:</strong> AI-powered automatic categorization of posts</li>
+            <li><strong>Auto-Labeling:</strong> AI-powered automatic categorization of posts and comments</li>
             <li><strong>Natural Language Search:</strong> Semantic search using AI embeddings</li>
             <li><strong>Subreddit Analysis:</strong> Community insights and analytics</li>
+            <li><strong>AI Chat Agent:</strong> Conversational assistant for searching, organizing, and managing saved posts and comments using Anthropic's Claude Sonnet 4 model</li>
+            <li><strong>AI Tools Integration (MCP):</strong> Optional sync to connect external AI tools (Claude Desktop, Cursor, Windsurf, etc.) to your saved content</li>
             <li><strong>Cross-Device Sync:</strong> Access your labels, notes, and read status across devices</li>
             <li><strong>Notion Integration:</strong> Export your saved posts to Notion databases</li>
             <li><strong>Bulk Operations:</strong> Perform actions on multiple posts simultaneously</li>
@@ -269,7 +280,7 @@
         <ul>
             <li><strong>Browser Extension:</strong> Client-side interface running in your Chrome browser</li>
             <li><strong>Server Infrastructure:</strong> Secure Supabase database for data synchronization</li>
-            <li><strong>AI Processing:</strong> OpenRouter/OpenAI API for AI-powered features</li>
+            <li><strong>AI Processing:</strong> OpenRouter/OpenAI API for AI-powered features and Anthropic API for AI Chat Agent</li>
             <li><strong>Payment Processing:</strong> Dodo Payments for subscription management</li>
         </ul>
 
@@ -363,9 +374,9 @@
         <h3>Permitted Uses</h3>
         <p>You may use Readdit Later for:</p>
         <ul>
-            <li>Personal organization and management of your saved Reddit content</li>
+            <li>Personal organization and management of your saved Reddit posts and comments</li>
             <li>Legitimate research and educational purposes</li>
-            <li>Creating personal backups of your publicly saved posts</li>
+            <li>Creating personal backups of your publicly saved posts and comments</li>
             <li>Analyzing your own Reddit activity patterns</li>
             <li>Exporting your data to third-party services (e.g., Notion) for personal use</li>
         </ul>
@@ -396,9 +407,9 @@
 
         <h3>Key Privacy Points</h3>
         <ul>
-            <li><strong>Local Storage:</strong> Reddit OAuth tokens and cached posts stored locally in your browser</li>
+            <li><strong>Local Storage:</strong> Reddit OAuth tokens and cached posts and comments stored locally in your browser</li>
             <li><strong>Server Storage:</strong> Labels, notes, and read status synced to our Supabase servers for cross-device access</li>
-            <li><strong>AI Processing:</strong> Post content sent to OpenRouter/OpenAI for AI features (not permanently stored)</li>
+            <li><strong>AI Processing:</strong> Post and comment content sent to OpenRouter/OpenAI and Anthropic for AI features (not permanently stored)</li>
             <li><strong>Data Control:</strong> You can export or delete all your data at any time</li>
             <li><strong>No Data Sales:</strong> We never sell your personal data to third parties</li>
         </ul>
@@ -406,9 +417,10 @@
         <h3>Third-Party Services</h3>
         <p>We use the following third-party services:</p>
         <ul>
-            <li><strong>Reddit API:</strong> For authentication and retrieving your saved posts</li>
+            <li><strong>Reddit API:</strong> For authentication and retrieving your saved posts and comments</li>
             <li><strong>Supabase:</strong> For secure database storage and cross-device sync</li>
-            <li><strong>OpenRouter/OpenAI:</strong> For AI-powered features</li>
+            <li><strong>OpenRouter/OpenAI:</strong> For AI-powered summaries, labeling, and analysis</li>
+            <li><strong>Anthropic:</strong> For AI Chat Agent conversations and tool-assisted management</li>
             <li><strong>Dodo Payments:</strong> For payment processing</li>
             <li><strong>Notion API:</strong> For optional Notion integration (if you enable it)</li>
         </ul>
@@ -427,7 +439,7 @@
 
         <h3>Your Content</h3>
         <ul>
-            <li>You retain all rights to your Reddit posts and content</li>
+            <li>You retain all rights to your Reddit posts, comments, and content</li>
             <li>Labels and notes you create remain your intellectual property</li>
             <li>We only access content you have explicitly saved on Reddit</li>
             <li>We do not claim any ownership over your personal data or content</li>
@@ -438,7 +450,7 @@
         <ul>
             <li>Reddit content is subject to Reddit's terms and individual creators' rights</li>
             <li>Respect copyright and intellectual property rights of all content creators</li>
-            <li>The extension is not affiliated with or endorsed by Reddit, Inc., OpenAI, Notion, or Supabase</li>
+            <li>The extension is not affiliated with or endorsed by Reddit, Inc., OpenAI, Anthropic, Notion, or Supabase</li>
             <li>AI-generated summaries are provided for personal use only</li>
         </ul>
 
@@ -446,8 +458,9 @@
 
         <h3>AI Feature Terms</h3>
         <ul>
-            <li>AI features use OpenAI's GPT-4o-mini model via OpenRouter API</li>
-            <li>AI-generated content (summaries, labels) may not always be accurate</li>
+            <li>AI features use OpenAI's GPT-4o-mini model via OpenRouter API for summaries, labeling, and analysis</li>
+            <li>The AI Chat Agent uses Anthropic's Claude Sonnet 4 model for conversational search and post management</li>
+            <li>AI-generated content (summaries, labels, chat responses) may not always be accurate</li>
             <li>You are responsible for verifying AI-generated content before relying on it</li>
             <li>AI features are subject to rate limits and availability of third-party services</li>
             <li>We do not guarantee accuracy, completeness, or reliability of AI outputs</li>
@@ -468,7 +481,7 @@
             <li>We strive to maintain 99% service availability for paid subscribers</li>
             <li>Service may be interrupted due to maintenance, updates, or technical issues</li>
             <li>Reddit API changes may affect extension functionality</li>
-            <li>Third-party service outages (OpenAI, Supabase) may impact features</li>
+            <li>Third-party service outages (OpenAI, Anthropic, Supabase) may impact features</li>
             <li>We do not guarantee 100% uptime or continuous availability</li>
             <li>Scheduled maintenance will be announced when possible</li>
         </ul>
@@ -525,7 +538,7 @@
             <li>Accuracy of AI-generated summaries, labels, or analysis</li>
             <li>Compatibility with all browser versions or configurations</li>
             <li>Prevention of data loss or corruption</li>
-            <li>Availability of third-party services (Reddit, OpenAI, Supabase)</li>
+            <li>Availability of third-party services (Reddit, OpenAI, Anthropic, Supabase)</li>
             <li>Results obtained from using the extension</li>
         </ul>
 
@@ -537,7 +550,7 @@
         <ul>
             <li>Loss of data, profits, revenue, or business opportunities</li>
             <li>Service interruptions or technical failures</li>
-            <li>Damages arising from third-party services (Reddit, OpenAI, Supabase, Dodo Payments)</li>
+            <li>Damages arising from third-party services (Reddit, OpenAI, Anthropic, Supabase, Dodo Payments)</li>
             <li>Inaccurate AI-generated content or analysis</li>
             <li>Unauthorized access to your account or data</li>
             <li>Any damages exceeding the amount you paid for the subscription in the 12 months preceding the claim</li>
@@ -571,7 +584,7 @@
         <ul>
             <li>You may cancel your subscription at any time through your account settings</li>
             <li>You may stop using the extension at any time by uninstalling it</li>
-            <li>Request data deletion through Settings → Privacy & Data or by email</li>
+            <li>Request data deletion through Settings or by email</li>
             <li>Revoke access permissions through Reddit's authorized applications page</li>
             <li>Cancellation does not entitle you to a refund for the current billing period</li>
         </ul>
@@ -714,7 +727,7 @@
         <div class="highlight">
             <strong>Remember:</strong> You can revoke the extension's access to your Reddit account at any time through 
             <a href="https://www.reddit.com/prefs/apps/" target="_blank">Reddit's authorized applications page</a>. 
-            You can also delete all your server-stored data through Settings → Privacy & Data.
+            You can also delete all your server-stored data through Settings.
         </div>
 
         <div class="important">
@@ -730,8 +743,8 @@
 
 <div class="footer">
     <p style="text-align: center;">
-        © 2026 Readdit Later. This extension is not affiliated with Reddit, Inc.<br>
-        Reddit is a trademark of Reddit, Inc. | OpenAI, Notion, Supabase, and Dodo Payments are trademarks of their respective owners.
+        &copy; 2026 Readdit Later. This extension is not affiliated with Reddit, Inc.<br>
+        Reddit is a trademark of Reddit, Inc. | OpenAI, Anthropic, Notion, Supabase, and Dodo Payments are trademarks of their respective owners.
     </p>
 </div>
 </body>

@@ -234,7 +234,7 @@
     <div class="terms-content">
         <div class="effective-date">
             <strong>Effective Date:</strong> January 14, 2026<br>
-            <strong>Last Updated:</strong> July 1, 2026
+            <strong>Last Updated:</strong> July 10, 2026
         </div>
 
         <h2>Agreement to Terms</h2>
@@ -263,22 +263,25 @@
 
         <h3>Premium Features (Subscription Required)</h3>
         <div class="premium-notice">
-            <strong>Premium Subscription:</strong> Advanced features require an active paid subscription.
-            A free trial period may be available for first-time users.
+            <strong>Premium Subscription:</strong> Advanced features require an active paid subscription or a one-time Lifetime purchase.
+            A free trial period may be available for first-time users. The specific features included in each plan are
+            described on our pricing page at the time of purchase.
         </div>
 
         <p>Premium features include:</p>
         <ul>
             <li><strong>AI-Powered Summaries:</strong> Automatic post summarization</li>
             <li><strong>Sentiment Analysis:</strong> Emotion and tone detection for posts</li>
-            <li><strong>Auto-Labeling:</strong> AI-powered automatic categorization of posts and comments</li>
+            <li><strong>Auto-Categorization &amp; Auto-Labeling:</strong> AI-powered automatic categorization of posts and comments</li>
+            <li><strong>Scheduled Auto-Export:</strong> Automatic export of your saved posts on a recurring schedule you configure</li>
             <li><strong>Natural Language Search:</strong> Semantic search using AI embeddings</li>
             <li><strong>Subreddit Analysis:</strong> Community insights and analytics</li>
             <li><strong>AI Chat Agent:</strong> Conversational assistant for searching, organizing, and managing saved posts and comments</li>
-            <li><strong>AI Tools Integration (MCP):</strong> Optional sync to connect external AI tools (Claude Desktop, Cursor, Windsurf, etc.) to your saved content</li>
+            <li><strong>AI Tools Integration (MCP):</strong> Connect external AI tools to your saved content, via an optional remote connector (Claude and other tools supporting remote MCP servers) or a local MCP server that runs on your own computer (Claude Desktop, Cursor, Windsurf, etc.)</li>
             <li><strong>Cross-Device Sync:</strong> Access your labels, notes, and read status across devices</li>
             <li><strong>Notion Integration:</strong> Export your saved posts to Notion databases</li>
             <li><strong>Bulk Operations:</strong> Perform actions on multiple posts simultaneously</li>
+            <li><strong>Premium Export Formats:</strong> Certain export destinations and formats are available only on specific plans, as described on our pricing page</li>
         </ul>
 
         <h3>Service Components</h3>
@@ -287,6 +290,7 @@
             <li><strong>Browser Extension:</strong> Client-side interface running in your Chrome browser</li>
             <li><strong>Server Infrastructure:</strong> Secure Supabase database for data synchronization</li>
             <li><strong>AI Processing:</strong> OpenRouter/OpenAI API for AI-powered features and Anthropic API for AI Chat Agent</li>
+            <li><strong>Local MCP Server (Optional):</strong> An open-source companion program you may choose to run on your own computer to connect local AI tools to the extension</li>
             <li><strong>Payment Processing:</strong> Dodo Payments for subscription management</li>
         </ul>
 
@@ -301,20 +305,35 @@
 
         <h2>Subscription and Payment Terms</h2>
 
-        <h3>Subscription Plans</h3>
+        <h3>Plans</h3>
         <ul>
             <li><strong>Free Trial:</strong> One-time trial period for new users (if available)</li>
-            <li><strong>Premium Monthly:</strong> Monthly subscription with automatic renewal</li>
-            <li><strong>Premium Yearly:</strong> Annual subscription with automatic renewal</li>
+            <li><strong>Pro Monthly:</strong> Monthly subscription with automatic renewal</li>
+            <li><strong>Pro Yearly:</strong> Annual subscription with automatic renewal</li>
+            <li><strong>Lifetime:</strong> One-time payment with no recurring charges (see Lifetime Plan Terms below)</li>
         </ul>
 
         <h3>Payment Terms</h3>
         <ul>
             <li>All payments are processed through Dodo Payments, our third-party payment processor</li>
-            <li>Subscription fees are billed in advance on a recurring basis</li>
+            <li>Subscription fees are billed in advance on a recurring basis; the Lifetime plan is billed once</li>
             <li>Prices are displayed in your local currency at the time of purchase</li>
             <li>All fees are non-refundable except as required by applicable law</li>
             <li>We do not store or have access to your credit card information</li>
+        </ul>
+
+        <h3>Lifetime Plan Terms</h3>
+        <div class="premium-notice">
+            <strong>What "Lifetime" Means:</strong> A Lifetime purchase grants access to the premium features included in
+            the Lifetime plan for the operating lifetime of the Readdit Later service — not the lifetime of the purchaser.
+        </div>
+        <ul>
+            <li>The Lifetime plan is a single, one-time payment with no automatic renewal and no recurring charges</li>
+            <li>It includes the premium features designated as Lifetime features on our pricing page at the time of purchase, plus future updates to those features</li>
+            <li>Lifetime access is tied to one Reddit username and is non-transferable and non-resellable</li>
+            <li>Features that depend on third-party services (AI providers, Reddit, Notion) remain subject to the availability of those services</li>
+            <li>If we permanently discontinue the Readdit Later service, we will provide reasonable advance notice and a window to export your data; discontinuation does not entitle you to a refund of the Lifetime fee except where required by applicable law</li>
+            <li>Lifetime access may be revoked without refund in cases of fraud, chargebacks, or material violation of these Terms</li>
         </ul>
 
         <h3>Free Trial Terms</h3>
@@ -327,10 +346,11 @@
 
         <h3>Automatic Renewal</h3>
         <ul>
-            <li>Subscriptions automatically renew at the end of each billing period</li>
+            <li>Monthly and yearly subscriptions automatically renew at the end of each billing period</li>
             <li>You will be charged the then-current subscription price</li>
             <li>You can cancel automatic renewal at any time through your account settings</li>
             <li>Cancellation takes effect at the end of the current billing period</li>
+            <li>The Lifetime plan does not renew and is never re-billed</li>
         </ul>
 
         <h3>Cancellation and Refunds</h3>
@@ -347,6 +367,7 @@
             <li>Price changes will be communicated at least 30 days in advance</li>
             <li>Continued subscription after price change constitutes acceptance</li>
             <li>You may cancel if you do not agree to the new pricing</li>
+            <li>Price changes never affect an already-purchased Lifetime plan</li>
         </ul>
 
         <h2>User Eligibility and Account Requirements</h2>
@@ -385,6 +406,7 @@
             <li>Creating personal backups of your publicly saved posts and comments</li>
             <li>Analyzing your own Reddit activity patterns</li>
             <li>Exporting your data to third-party services (e.g., Notion) for personal use</li>
+            <li>Connecting your own AI tools to your own library through the MCP integration</li>
         </ul>
 
         <h3>Prohibited Uses</h3>
@@ -396,6 +418,7 @@
             <li>Circumvent Reddit's rate limits or terms of service</li>
             <li>Create automated systems to abuse Reddit's services</li>
             <li>Share, resell, or redistribute your subscription access</li>
+            <li>Share your MCP connector URL or sync token with other people or public services</li>
             <li>Distribute, sell, or commercialize the extension without permission</li>
             <li>Use the extension for any harmful, illegal, or malicious purposes</li>
             <li>Attempt to interfere with the extension's operation or security</li>
@@ -416,6 +439,8 @@
             <li><strong>Local Storage:</strong> Reddit OAuth tokens and cached posts and comments stored locally in your browser</li>
             <li><strong>Server Storage:</strong> Labels, notes, and read status synced to our Supabase servers for cross-device access</li>
             <li><strong>AI Processing:</strong> Post and comment content sent to OpenRouter/OpenAI and Anthropic for AI features (not permanently stored)</li>
+            <li><strong>MCP Sync (Opt-in):</strong> If you enable the remote AI Tools connector, a copy of your saves is synced to our server under an anonymous token, with automatic deletion after 30 days of inactivity</li>
+            <li><strong>Usage Analytics:</strong> First-party feature-usage events are sent to our own server to improve the product; we use no third-party analytics or trackers</li>
             <li><strong>Data Control:</strong> You can export or delete all your data at any time</li>
             <li><strong>No Data Sales:</strong> We never sell your personal data to third parties</li>
         </ul>
@@ -429,6 +454,7 @@
             <li><strong>Anthropic:</strong> For AI Chat Agent conversations and tool-assisted management</li>
             <li><strong>Dodo Payments:</strong> For payment processing</li>
             <li><strong>Notion API:</strong> For optional Notion integration (if you enable it)</li>
+            <li><strong>Crisp:</strong> For optional in-app support chat (if you open it)</li>
         </ul>
 
         <p>Each service has its own privacy policy governing how they handle data.</p>
@@ -448,6 +474,7 @@
             <li>Readdit Later and all associated intellectual property belong to its developers</li>
             <li>These Terms grant you a limited, non-exclusive, non-transferable license to use the extension</li>
             <li>You may not copy, modify, distribute, or create derivative works</li>
+            <li>The local MCP server is distributed under its own open-source license (MIT), which governs that component</li>
             <li>All trademarks and service marks remain the property of their respective owners</li>
         </ul>
 
@@ -478,6 +505,15 @@
             <li>You are responsible for verifying AI-generated content before relying on it</li>
             <li>AI features are subject to rate limits and availability of third-party services</li>
             <li>We do not guarantee accuracy, completeness, or reliability of AI outputs</li>
+        </ul>
+
+        <h3>AI Tools Integration (MCP) Terms</h3>
+        <ul>
+            <li>The MCP integration lets AI tools you choose to connect (such as Claude, Claude Desktop, or Cursor) read your library and, through the local MCP server, perform actions on it — including labeling, organizing, adding notes, deleting posts from your library, and exporting</li>
+            <li><strong>Actions performed by your connected AI tools are treated as your actions.</strong> You are responsible for the instructions you give your AI tools and for reviewing the actions they take, including deletions and exports</li>
+            <li>You are responsible for keeping your MCP connector URL and sync token confidential; anyone with the URL can read your synced saves</li>
+            <li>Your use of connected AI tools is also governed by those tools' own terms of service</li>
+            <li>We are not responsible for the behavior, output, or availability of third-party AI tools connected through MCP</li>
         </ul>
 
         <h3>Acceptable Use of AI Features</h3>
@@ -515,6 +551,7 @@
         <ul>
             <li>Keep your Reddit account credentials secure and confidential</li>
             <li>Use strong, unique passwords for your accounts</li>
+            <li>Keep your MCP connector URL and sync token private</li>
             <li>Notify us immediately of any suspected unauthorized access</li>
             <li>Regularly review authorized applications in your Reddit settings</li>
             <li>Do not share your subscription access with others</li>
@@ -550,6 +587,7 @@
             <li>Continuous or error-free operation of the extension</li>
             <li>Accuracy or completeness of data retrieved from Reddit or AI services</li>
             <li>Accuracy of AI-generated summaries, labels, or analysis</li>
+            <li>Actions taken by third-party AI tools connected through the MCP integration</li>
             <li>Compatibility with all browser versions or configurations</li>
             <li>Prevention of data loss or corruption</li>
             <li>Availability of third-party services (Reddit, OpenAI, Anthropic, Supabase)</li>
@@ -565,6 +603,7 @@
             <li>Loss of data, profits, revenue, or business opportunities</li>
             <li>Service interruptions or technical failures</li>
             <li>Damages arising from third-party services (Reddit, OpenAI, Anthropic, Supabase, Dodo Payments)</li>
+            <li>Damages arising from actions performed by AI tools you connected through MCP</li>
             <li>Inaccurate AI-generated content or analysis</li>
             <li>Unauthorized access to your account or data</li>
             <li>Any damages exceeding the amount you paid for the subscription in the 12 months preceding the claim</li>
@@ -587,7 +626,7 @@
             <li>Your violation of these Terms or applicable laws</li>
             <li>Your violation of any third-party rights (including intellectual property rights)</li>
             <li>Any content you access, create, or manage through the extension</li>
-            <li>Your use of AI features or AI-generated content</li>
+            <li>Your use of AI features, AI-generated content, or AI tools connected through MCP</li>
             <li>Fraudulent payment activities or chargebacks</li>
             <li>Your breach of Reddit's Terms of Service</li>
         </ul>
@@ -600,6 +639,7 @@
             <li>You may stop using the extension at any time by uninstalling it</li>
             <li>Request data deletion through Settings or by email</li>
             <li>Revoke access permissions through Reddit's authorized applications page</li>
+            <li>Disconnect the MCP integration at any time from the extension, which deletes your synced data from the server</li>
             <li>Cancellation does not entitle you to a refund for the current billing period</li>
         </ul>
 
@@ -620,6 +660,7 @@
             <li>You should uninstall the extension from your browser</li>
             <li>Access to premium features will be immediately revoked</li>
             <li>Server-stored data (labels, notes, read status) will be retained for 30 days</li>
+            <li>MCP synced data is deleted per the retention rules in our Privacy Policy</li>
             <li>You may request data export within 30 days of termination</li>
             <li>After 30 days, server data may be permanently deleted</li>
             <li>Locally stored data remains on your device unless manually deleted</li>
@@ -733,8 +774,9 @@
             <li>You have the legal capacity to enter into this agreement</li>
             <li>All information you provide is accurate and complete</li>
             <li>You will comply with all applicable laws and these Terms</li>
-            <li>You understand that premium features require a paid subscription</li>
+            <li>You understand that premium features require a paid subscription or Lifetime purchase</li>
             <li>You understand how your data is collected, stored, and used</li>
+            <li>You are responsible for actions taken by AI tools you connect through MCP</li>
             <li>You have reviewed and understand the refund and cancellation policies</li>
         </ul>
 
@@ -754,7 +796,7 @@
 <div class="footer">
     <p style="text-align: center;">
         &copy; 2026 Readdit Later. This extension is not affiliated with Reddit, Inc.<br>
-        Reddit is a trademark of Reddit, Inc. | OpenAI, Anthropic, Notion, Supabase, and Dodo Payments are trademarks of their respective owners.
+        Reddit is a trademark of Reddit, Inc. | OpenAI, Anthropic, Notion, Supabase, Crisp, and Dodo Payments are trademarks of their respective owners.
     </p>
 </div>
 </body>
